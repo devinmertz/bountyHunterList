@@ -1,0 +1,29 @@
+body {
+	color: aliceblue;
+	background: url(/expressbounty/stormtrooper.jpg) no-repeat center center fixed;
+	background-size: cover;
+	
+	background-repeat: no-repeat;
+	font-family: monospace;
+}
+
+.col-xs-4 {
+	text-align: center;
+}
+
+.col-xs-12 {
+	text-align: center;
+}
+
+input {
+	color: black;
+}
+
+h1,
+h2 {
+	text-decoration: underline;
+}
+
+ul {
+	list-style-type: none;
+}

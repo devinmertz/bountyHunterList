@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MainApp">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Star Wars</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="MainController">
+	<div class="container-fuid">
+		<div class="row">
+			<div class="col-xs-12">
+			<h1><span><img src="/expressbounty/crosshairs.png" alt="cross-hairs" width="130" height="100"></span>BOUNTY HUNTER HIT LIST<span><img src="/expressbounty/crosshairs.png" alt="cross-hairs" width="130" height="100"></span></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+
+			</div>
+			<div class="col-xs-4">
+
+				<input type="text" ng-model="newName" placeholder="who will it be?">
+
+				<button type="button" class="btn btn-primary" ng-click="poster()">get em</button>
+
+			</div>
+			<div class="col-xs-4">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-4">
+				<h2>BOUNTY</h2>
+
+				<ul ng-repeat="person in bountyList track by $index">
+
+					<li>{{person.name}}&nbsp; &nbsp; &nbsp;
+						<button type="button" class="btn btn-success" ng-click="pusher(person.name, $index)">caught?</button>
+					</li>
+				</ul>
+			</div>
+			<div class="col-xs-4">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-4">
+			<h2>CAPTURED</h2>
+				<ul ng-repeat="capture in capturedList track by $index">
+
+					<li>{{capture.name}}&nbsp; &nbsp; &nbsp;
+						<button class="btn btn-danger" ng-click="deleter(capture.name, $index)">dead?</button>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="col-xs-4">
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	<script src="app.js"></script>
+	<script src="mainservice.js"></script>
+</body>
+
+</html>
